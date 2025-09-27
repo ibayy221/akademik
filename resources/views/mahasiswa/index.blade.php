@@ -30,6 +30,7 @@
                         <tr>
                             <th class="px-4 py-2 border">NIM</th>
                             <th class="px-4 py-2 border">Nama</th>
+                            <!-- Tombol edit dipindah ke dalam baris data -->
                         </tr>
                     </thead>
                     <tbody>
@@ -37,6 +38,9 @@
                             <tr>
                                 <th class="border px-4 py-2">{{ $mhs->nim }}</th>
                                 <th class="border px-4 py-2">{{ $mhs->nama }}</th>
+                                <th class="border px-4 py-2">
+                                    <a href="{{ route('mahasiswa.edit', $mhs->nim) }}" class="px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600">Edit</a>
+                                </th>
                             </tr>
                         @endforeach
                     </tbody>

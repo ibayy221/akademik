@@ -16,4 +16,9 @@ class MahasiswaController extends Controller
         Mahasiswa::create($request->only('nama', 'nim'));
         return redirect()->back();
     }
+
+    public function edit($nim) {
+        $data = Mahasiswa::where('nim', $nim)->firstOrFail();
+        return view('mahasiswa.edit', compact('data'));
+    }
 }

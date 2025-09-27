@@ -21,6 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa.index');
     Route::post('/mahasiswa', [MahasiswaController::class, 'store'])->name('mahasiswa.store');
+    Route::get('/mahasiswa/{nim}/edit', [MahasiswaController::class, 'edit'])->name('mahasiswa.edit');
     Route::get('/kelas', [KelasController::class, 'index'])->name('kelas.index');
     Route::post('/kelas', [KelasController::class, 'store'])->name('kelas.store');
     Route::get('/matakuliah', [MatakuliahController::class, 'index'])->name('matakuliah.index');
