@@ -12,9 +12,9 @@
                 <h3 class="font-semibold text-lg mb-4">Mahasiswa</h3>
                 <form method="POST" action="{{ route('mahasiswa.store') }}" class="space-y-4">
                     @csrf
-                    <input type="text" name="nim" placeholder="NIM" class="border-gray-300 rounded-md w-full">
-                    <input type="text" name="nama" placeholder="Nama" class="border-gray-300 rounded-md w-full">
-                    <select name="kelas_id" class="border-gray-300 rounded-md w-full">
+                    <input type="text" name="nim" placeholder="NIM" class="border-gray-300 rounded-md w-full text-gray-900">
+                    <input type="text" name="nama" placeholder="Nama" class="border-gray-300 rounded-md w-full text-gray-900">
+                    <select name="kelas_id" class="border-gray-300 rounded-md w-full text-gray-900">
                         <option value="">-- Pilih Kelas --</option>
                         @foreach ($kelas as $kls)
                             <option value="{{ $kls->id }}">{{ $kls->namaKelas }}</option>
@@ -46,7 +46,7 @@
                             <tr>
                                 <th class="border px-4 py-2">{{ $mhs->nim }}</th>
                                 <th class="border px-4 py-2">{{ $mhs->nama }}</th>
-                                <th class="border px-4 py-2">{{ $mhs->kelas->nama_kelas ?? '-' }}</th>
+                                <th class="border px-4 py-2">{{ $mhs->kelas->namaKelas ?? '-' }}</th>
                                 <th class="border px-4 py-2 flex gap-2">
                                     <a href="{{ route('mahasiswa.edit', $mhs->nim) }}" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-yellow-600">Edit</a>
                                     <form action="{{ route('mahasiswa.destroy', $mhs->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus data ini?')">

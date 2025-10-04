@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Classes;
+use App\Models\Kelas;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,8 +13,8 @@ class KelasSeeder extends Seeder
      */
     public function run(): void
     {
-        Classes::create(['nama_kelas' => 'ASE-1A']);
-        Classes::create(['nama_kelas' => 'TI-1B']);
-        Classes::create(['nama_kelas' => 'TI-1C']);
+        Kelas::create(['namaKelas' => 'ASE-10',]);
+        Kelas::create(['namaKelas' => 'ASE-11',]);
+        Kelas::create(['namaKelas' => 'TI-12']);
     }
 }

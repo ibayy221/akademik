@@ -20,9 +20,20 @@ class MahasiswaController extends Controller
         $kelas = Kelas::all();
         return view('mahasiswa.index', compact('data', 'kelas'));
     }
-
     public function store(Request $request) {
-        Mahasiswa::create($request->only('nama', 'nim'));
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'nim' => 'required|string|max:255',
+            'kelas_id' => 'required|exists:kelas,id',
+        ]);
+        mahasiswa::create([
+            'nama' => $request->nama,
+            'nim' => $request->nim,
+            'kelas_id' => $request->kelas_id,
+        ]);
+        return redirect()->back()->with('success', 'Data mahasiswa berhasil ditambahkan');
+
+        Mahasiswa::create($request->only('nama', 'nim', 'kelas_id'));
         return redirect()->back();
     }
 
