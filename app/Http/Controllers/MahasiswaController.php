@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Mahasiswa;
+use App\Models\Kelas;
 
 class MahasiswaController extends Controller
 {
@@ -13,8 +14,11 @@ class MahasiswaController extends Controller
         return redirect()->route('mahasiswa.index')->with('success', 'Data mahasiswa berhasil dihapus');
     }
     public function index() {
-        $data = Mahasiswa::all();
-        return view('mahasiswa.index', compact('data'));
+        // $data = Mahasiswa::all();
+        // return view('mahasiswa.index', compact('data'));
+        $data = Mahasiswa ::with('kelas')->get();
+        $kelas = Kelas::all();
+        return view('mahasiswa.index', compact('data', 'kelas'));
     }
 
     public function store(Request $request) {
