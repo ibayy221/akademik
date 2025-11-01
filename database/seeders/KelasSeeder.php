@@ -13,8 +13,8 @@ class KelasSeeder extends Seeder
      */
     public function run(): void
     {
-        Kelas::create(['namaKelas' => 'ASE-10',]);
-        Kelas::create(['namaKelas' => 'ASE-11',]);
-        Kelas::create(['namaKelas' => 'TI-12']);
+        Kelas::create(['namaKelas' => 'ASE-10','kapasitas' => 30]);
+        Kelas::create(['namaKelas' => 'ASE-11','kapasitas' => 30]);
+        Kelas::create(['namaKelas' => 'ASE-12','kapasitas' => 30]);
     }
 }

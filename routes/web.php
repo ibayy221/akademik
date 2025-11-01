@@ -5,6 +5,7 @@ use App\Http\Controllers\KelasController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MatakuliahController;
+use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,6 +31,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/matakuliah', [MatakuliahController::class, 'store'])->name('matakuliah.store');
     Route::get('/dosen', [DosenController::class, 'index'])->name('dosen.index');
     Route::post('/dosen', [DosenController::class, 'store'])->name('dosen.store');
+
+    // Registrasi multi-step (step 3 view + submit)
+    Route::get('/registrasi', [RegistrationController::class, 'show'])->name('registrasi');
+    Route::post('/registrasi', [RegistrationController::class, 'store'])->name('registrasi.store');
 });
 
 require __DIR__.'/auth.php';
