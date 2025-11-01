@@ -39,6 +39,9 @@
                         <a href="{{ route('matakuliah.index') }}" class="block px-4 py-2 rounded hover:bg-gray-200 {{ request()->routeIs('matakuliah.*') ? 'bg-gray-200 font-semibold' : ''}}">
                             Matakuliah
                         </a>
+                        <a href="{{ route('registrasi.index') }}" class="block px-4 py-2 rounded hover:bg-gray-200 {{ request()->routeIs('registrasi.*') ? 'bg-gray-200 font-semibold' : ''}}">
+                            Daftar mahasiswa
+                        </a>
                     </nav>
                 </aside>
             <!-- Page Content -->

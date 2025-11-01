@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/dosen', [DosenController::class, 'store'])->name('dosen.store');
 
     // Registrasi multi-step (step 3 view + submit)
-    Route::get('/registrasi', [RegistrationController::class, 'show'])->name('registrasi');
+    Route::get('/registrasi', [RegistrationController::class, 'show'])->name('registrasi.index');
     Route::post('/registrasi', [RegistrationController::class, 'store'])->name('registrasi.store');
 });
 

@@ -14,13 +14,13 @@
             <div class="space-y-4">
                 <div>
                     <label class="block text-sm font-medium">Asal Sekolah SD</label>
-                    <input type="text" name="asal_sd" value="{{ old('asal_sd') }}" class="mt-1 block w-full border rounded px-3 py-2" placeholder="SDN 1">
+                    <input type="text" name="asal_sd" value="{{ old('asal_sd') }}" class="mt-1 block w-full border rounded px-3 py-2" placeholder="contoh : SDN 1">
                     @error('asal_sd') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium">Asal Sekolah SMP</label>
-                    <input type="text" name="asal_smp" value="{{ old('asal_smp') }}" class="mt-1 block w-full border rounded px-3 py-2" placeholder="SMPN 2">
+                    <input type="text" name="asal_smp" value="{{ old('asal_smp') }}" class="mt-1 block w-full border rounded px-3 py-2" placeholder="contoh : SMPN 2">
                     @error('asal_smp') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
                 </div>
 
@@ -49,8 +49,8 @@
                 </div>
 
                 <div class="flex items-center justify-between">
-                    <a href="#" class="text-sm text-gray-600">&larr; Kembali ke Step 2</a>
-                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded">Simpan & Lanjut Step 4</button>
+                    <a href="#" class="text-sm text-gray-600">&larr; Kembali</a>
+                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded">Simpan kang</button>
                 </div>
             </div>
         </form>
